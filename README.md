@@ -15,11 +15,12 @@ You'll need these if you ever want to split strings that contain emoji.
 
 If you use naive methods for this (or packages that purport to split unicode
 strings correctly) you'll have trouble because emoji can span multiple
-characters (and multiple surrogate pairs).
+characters/surrogate pairs.
 
-The longest emoji is specified by 4 "regular" emoji with zero-width joiners in
-between them, for example. This library will correctly split that emoji into
-one space in the returned array of characters.
+The longest emoji I'm aware of is specified by 4 "regular" emoji (one, a heart,
+with its own variation selector) with zero-width joiners in between them.
+That's 8 unicode characters as split by most libraries. This library will
+correctly split that emoji into one entry in the returned array of characters.
 
 (But the unicode portion probably needs
 [some more work](https://mathiasbynens.be/notes/javascript-unicode)).
@@ -33,4 +34,19 @@ var result = split('cats 😸 are the best');
 
 result[5] === '😸';
 // true
+```
+
+A starker example that uses Mathias Bynens' `getSymbols` with a particularly
+tricky emoji:
+
+```js
+// depending on your browser this will render as 1 emoji or 4; it's
+// woman + zwj + heart + graphic variation selector + zwj + kiss + zwj + woman
+var love = 'test: 👩‍❤️‍💋‍👩';
+
+console.log(getSymbols(love));
+// [ 't', 'e', 's', 't', ':', ' ', '👩', '', '❤', '️', '', '💋', '', '👩', '' ]
+
+console.log(split(love));
+// [ 't', 'e', 's', 't', ':', ' ', '👩❤️💋👩' ]
 ```
