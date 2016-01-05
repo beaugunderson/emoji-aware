@@ -36,17 +36,18 @@ result[5] === '😸';
 // true
 ```
 
-A starker example that uses Mathias Bynens' `getSymbols` with a particularly
-tricky emoji ![emoji](http://i.imgur.com/NUKsA1Y.png):
+A starker example that uses Mathias Bynens' `getSymbols` with a
+[composed emoji](http://i.imgur.com/NUKsA1Y.png):
 
 ```js
 // depending on your browser this will render as 1 emoji or 4; it's
 // woman + zwj + heart + graphic variation selector + zwj + kiss + zwj + woman
+// see above for a link to a correctly-rendered version
 var love = 'test: 👩‍❤️‍💋‍👩';
 
 console.log(getSymbols(love));
 // [ 't', 'e', 's', 't', ':', ' ', '👩', '', '❤', '️', '', '💋', '', '👩', '' ]
 
 console.log(split(love));
-// [ 't', 'e', 's', 't', ':', ' ', '👩❤️💋👩' ]
+// [ 't', 'e', 's', 't', ':', ' ', '👩‍❤️‍💋‍👩' ]
 ```
