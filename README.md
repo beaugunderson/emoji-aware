@@ -37,7 +37,7 @@ result[5] === '😸';
 ```
 
 A starker example that uses Mathias Bynens' `getSymbols` with a particularly
-tricky emoji:
+tricky emoji ![emoji](http://i.imgur.com/NUKsA1Y.png):
 
 ```js
 // depending on your browser this will render as 1 emoji or 4; it's
