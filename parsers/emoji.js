@@ -1,7 +1,7 @@
 'use strict';
 
 var Parsimmon = require('parsimmon');
-var _ = require('lodash');
+var flattenDeep = require('lodash.flattendeep');
 
 var OptionalVariationSelector = Parsimmon.regex(/[\uFE0E\uFE0F]{0,1}/)
   .desc('an optional variation selector');
@@ -61,7 +61,7 @@ exports.parseOne = function (string) {
     return false;
   }
 
-  return _.flattenDeep(result.value).join('');
+  return flattenDeep(result.value).join('');
 };
 
 exports.parse = function (string) {
@@ -72,6 +72,6 @@ exports.parse = function (string) {
   }
 
   return result.value.map(function (p) {
-    return _.flattenDeep(p).join('');
+    return flattenDeep(p).join('');
   });
 };

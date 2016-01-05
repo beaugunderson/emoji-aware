@@ -16,7 +16,7 @@
   "author": "Beau Gunderson <beau@beaugunderson.com> (https://beaugunderson.com/)",
   "license": "MIT",
   "dependencies": {
-    "lodash": "^3.10.1",
+    "lodash.flattendeep": "^3.0.2",
     "parsimmon": "^0.7.0"
   },
   "directories": {

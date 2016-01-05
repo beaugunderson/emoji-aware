@@ -2,7 +2,7 @@
 
 var Emoji = require('./emoji.js').Emoji;
 var Parsimmon = require('parsimmon');
-var _ = require('lodash');
+var flattenDeep = require('lodash.flattenDeep');
 
 var SurrogatePair = Parsimmon.regex(/[\uD800-\uDBFF][\uDC00-\uDFFF]/);
 
@@ -13,13 +13,23 @@ var Unicode = exports.Unicode = Parsimmon.alt(
 );
 
 exports.parseOne = function (string) {
-  return Unicode.parse(string).value.map(function (p) {
-    return _.flattenDeep(p).join('');
-  });
+  var result = Unicode.parse(string);
+
+  if (!result.status) {
+    return false;
+  }
+
+  return flattenDeep(result.value).join('');
 };
 
 exports.parse = function (string) {
-  return Unicode.many().parse(string).value.map(function (p) {
-    return _.flattenDeep(p).join('');
+  var result = Unicode.many().parse(string);
+
+  if (!result.status) {
+    return false;
+  }
+
+  return result.value.map(function (p) {
+    return flattenDeep(p).join('');
   });
 };
