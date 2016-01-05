@@ -39,14 +39,4 @@ result[5] === '😸';
 A starker example that uses Mathias Bynens' `getSymbols` with a
 [composed emoji](http://i.imgur.com/NUKsA1Y.png):
 
-```js
-// this emoji is specified by:
-// woman + zwj + heart + graphic variation selector + zwj + kiss + zwj + woman
-var love = 'test: 👩‍❤️‍💋‍👩';
-
-console.log(getSymbols(love));
-// [ 't', 'e', 's', 't', ':', ' ', '👩', '', '❤', '️', '', '💋', '', '👩', '' ]
-
-console.log(split(love));
-// [ 't', 'e', 's', 't', ':', ' ', '👩‍❤️‍💋‍👩' ]
-```
+![a screenshot of the output](http://i.imgur.com/Gdgsik5.png)
