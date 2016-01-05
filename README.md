@@ -1,3 +1,12 @@
+[![travis]](http://travis-ci.org/beaugunderson/emoji-aware)
+[![codecov.io](https://codecov.io/github/beaugunderson/emoji-aware/coverage.svg?branch=master)](https://codecov.io/github/beaugunderson/emoji-aware?branch=master)
+[![downloads]](https://www.npmjs.com/package/emoji-aware)
+[![version]](https://www.npmjs.com/package/emoji-aware)
+
+[travis]: https://img.shields.io/travis/beaugunderson/emoji-aware.svg
+[downloads]: https://img.shields.io/npm/dm/emoji-aware.svg
+[version]: https://img.shields.io/npm/v/emoji-aware.svg
+
 ## emoji-aware
 
 Emoji-aware unicode string utilities for JavaScript.
