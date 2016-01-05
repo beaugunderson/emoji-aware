@@ -4,7 +4,8 @@
   "description": "Emoji-aware unicode string utilities",
   "main": "emoji-aware.js",
   "scripts": {
-    "test": "ava --verbose"
+    "test": "ava --verbose",
+    "coverage": "nyc npm test && nyc report --reporter=text-lcov | codecov"
   },
   "keywords": [
     "unicode",
@@ -23,8 +24,9 @@
   },
   "devDependencies": {
     "ava": "^0.9.1",
+    "codecov.io": "^0.1.6",
     "emojilib": "^1.1.0",
-    "tap-nyan": "0.0.2"
+    "nyc": "^5.2.0"
   },
   "repository": {
     "type": "git",
