@@ -33,13 +33,19 @@ test('parseOne emoji', function (t) {
   });
 });
 
+test('parseOne fail non-emoji', function (t) {
+  t.plan(1);
+
+  t.false(emoji.parseOne('a'));
+});
+
 test('parse fail on emoji with non-emoji', function (t) {
   t.plan(characters.length);
 
   characters.forEach(function (e) {
     var result = emoji.parse(`a${e}a`);
 
-    t.is(result, false);
+    t.false(result);
   });
 });
 
@@ -47,12 +53,12 @@ test('isEmoji emoji', function (t) {
   t.plan(characters.length);
 
   characters.forEach(function (e) {
-    t.is(isEmoji(e), true);
+    t.true(isEmoji(e));
   });
 });
 
 test('isEmoji fail on non-emoji', function (t) {
   t.plan(1);
 
-  t.is(isEmoji('a'), false);
+  t.false(isEmoji('a'));
 });
