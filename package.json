@@ -1,0 +1,37 @@
+{
+  "name": "emoji-aware",
+  "version": "1.0.0",
+  "description": "Emoji-aware unicode string utilities",
+  "main": "emoji-aware.js",
+  "scripts": {
+    "test": "ava --verbose"
+  },
+  "keywords": [
+    "unicode",
+    "emoji",
+    "string",
+    "split"
+  ],
+  "author": "Beau Gunderson <beau@beaugunderson.com> (https://beaugunderson.com/)",
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "^3.10.1",
+    "parsimmon": "^0.7.0"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {
+    "ava": "^0.9.1",
+    "emojilib": "^1.1.0",
+    "tap-nyan": "0.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/beaugunderson/emoji-aware.git"
+  },
+  "bugs": {
+    "url": "https://github.com/beaugunderson/emoji-aware/issues"
+  },
+  "homepage": "https://github.com/beaugunderson/emoji-aware#readme"
+}
