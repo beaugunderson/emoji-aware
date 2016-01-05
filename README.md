@@ -40,9 +40,8 @@ A starker example that uses Mathias Bynens' `getSymbols` with a
 [composed emoji](http://i.imgur.com/NUKsA1Y.png):
 
 ```js
-// depending on your browser this will render as 1 emoji or 4; it's
+// this emoji is specified by:
 // woman + zwj + heart + graphic variation selector + zwj + kiss + zwj + woman
-// see above for a link to a correctly-rendered version
 var love = 'test: 👩‍❤️‍💋‍👩';
 
 console.log(getSymbols(love));
