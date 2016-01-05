@@ -2,7 +2,7 @@
 
 var Emoji = require('./emoji.js').Emoji;
 var Parsimmon = require('parsimmon');
-var flattenDeep = require('lodash.flattenDeep');
+var flattenDeep = require('lodash.flattendeep');
 
 var SurrogatePair = Parsimmon.regex(/[\uD800-\uDBFF][\uDC00-\uDFFF]/);
 
