@@ -38,3 +38,27 @@ test('parse unicode string', t => {
 
   t.is(result[0], 'T');
 });
+
+test('parseOne fail empty string', t => {
+  t.plan(1);
+
+  var result = unicode.parseOne('');
+
+  t.false(result);
+});
+
+test('parse empty string', t => {
+  t.plan(1);
+
+  var result = unicode.parse('');
+
+  t.same(result, []);
+});
+
+test('parse fail broken string', t => {
+  t.plan(1);
+
+  var result = unicode.parse('\uDC00\uDC01');
+
+  t.false(result);
+});
