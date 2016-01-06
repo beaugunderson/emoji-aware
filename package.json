@@ -1,6 +1,6 @@
 {
   "name": "emoji-aware",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "Emoji-aware unicode string utilities",
   "main": "emoji-aware.js",
   "scripts": {
