@@ -53,7 +53,9 @@ var Emoji = exports.Emoji = Parsimmon.alt(
     OptionalVariationSelector
   ),
   KeycapEmoji
-);
+).map(function (result) {
+  return flattenDeep(result).join('');
+});
 
 exports.parseOne = function (string) {
   var result = Emoji.parse(string);
@@ -62,7 +64,7 @@ exports.parseOne = function (string) {
     return false;
   }
 
-  return flattenDeep(result.value).join('');
+  return result.value;
 };
 
 exports.parse = function (string) {
@@ -72,7 +74,5 @@ exports.parse = function (string) {
     return false;
   }
 
-  return result.value.map(function (p) {
-    return flattenDeep(p).join('');
-  });
+  return result.value;
 };
