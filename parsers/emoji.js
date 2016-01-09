@@ -3,8 +3,9 @@
 var Parsimmon = require('parsimmon');
 var flattenDeep = require('lodash.flattendeep');
 
-var OptionalVariationSelector = Parsimmon.regex(/[\uFE0E\uFE0F]{0,1}/)
-  .desc('an optional variation selector');
+var OptionalVariationSelector =
+  exports.OptionalVariationSelector = Parsimmon.regex(/[\uFE0E\uFE0F]{0,1}/)
+  .desc('an optional variation selector (\\uFE0E or \\uFE0F)');
 
 var KeycapEmoji = Parsimmon.seq(
   Parsimmon.regex(/[0-9#*]/),
