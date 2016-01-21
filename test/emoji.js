@@ -4,7 +4,6 @@ import test from 'ava';
 
 var characters = require('./fixtures/emoji-characters.js');
 var emoji = require('../parsers/emoji.js');
-var isEmoji = require('../lib/is-emoji.js');
 
 characters.forEach(function (e) {
   test('parse one emoji ' + e, function (t) {
@@ -21,11 +20,6 @@ characters.forEach(function (e) {
     t.is(result[1], e);
   });
 
-  test('parseOne emoji ' + e, function (t) {
-    t.plan(1);
-    t.is(emoji.parseOne(e), e);
-  });
-
   test('parse fail on emoji with non-emoji a' + e + 'a', function (t) {
     t.plan(1);
 
@@ -33,22 +27,4 @@ characters.forEach(function (e) {
 
     t.false(result);
   });
-
-  test('isEmoji emoji', function (t) {
-    t.plan(1);
-
-    t.true(isEmoji(e));
-  });
-});
-
-test('parseOne fail non-emoji', function (t) {
-  t.plan(1);
-
-  t.false(emoji.parseOne('a'));
-});
-
-test('isEmoji fail on non-emoji', function (t) {
-  t.plan(1);
-
-  t.false(isEmoji('a'));
 });
