@@ -6,8 +6,6 @@ var characters = require('./fixtures/emoji-characters.js');
 var unicode = require('../parsers/unicode-and-emoji.js');
 
 test('parseOne emoji', t => {
-  t.plan(characters.length);
-
   characters.forEach(function (e) {
     var result = unicode.parseOne(e);
 
@@ -16,8 +14,6 @@ test('parseOne emoji', t => {
 });
 
 test('parse string that includes emoji', t => {
-  t.plan(characters.length * 7);
-
   characters.forEach(function (e) {
     var result = unicode.parse(`abcd${e}fg`);
 
@@ -32,32 +28,24 @@ test('parse string that includes emoji', t => {
 });
 
 test('parse unicode string', t => {
-  t.plan(1);
-
   var result = unicode.parse('Testing «ταБЬℓσ»: 1<2 & 4+1>3, now 20% off!');
 
   t.is(result[0], 'T');
 });
 
 test('parseOne fail empty string', t => {
-  t.plan(1);
-
   var result = unicode.parseOne('');
 
   t.false(result);
 });
 
 test('parse empty string', t => {
-  t.plan(1);
-
   var result = unicode.parse('');
 
   t.same(result, []);
 });
 
 test('parse fail broken string', t => {
-  t.plan(1);
-
   var result = unicode.parse('\uDC00\uDC01');
 
   t.false(result);

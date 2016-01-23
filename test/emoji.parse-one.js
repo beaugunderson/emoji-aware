@@ -7,7 +7,6 @@ var emoji = require('../parsers/emoji.js');
 
 characters.forEach(function (e) {
   test('parse one emoji ' + e, function (t) {
-    t.plan(1);
     t.is(emoji.parse(e)[0], e);
   });
 });
