@@ -9,6 +9,10 @@
 
 ## emoji-aware
 
+*Note:* Lodash's `split` function now correctly splits strings that contain
+emoji; so if that's all you need to do then [Lodash](https://lodash.com/) is a
+great fit.
+
 Emoji-aware unicode string utilities for JavaScript.
 
 You'll need these if you ever want to split strings that contain emoji.
@@ -24,6 +28,9 @@ correctly split that emoji into one entry in the returned array of characters.
 
 (But the unicode portion probably needs
 [some more work](https://mathiasbynens.be/notes/javascript-unicode)).
+
+`emoji-aware` also includes a parser combinator-based parser for emoji that you
+can build on top of for your own parsing needs.
 
 ### Example
 
