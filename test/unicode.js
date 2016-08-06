@@ -42,7 +42,7 @@ test('parseOne fail empty string', t => {
 test('parse empty string', t => {
   var result = unicode.parse('');
 
-  t.same(result, []);
+  t.deepEqual(result, []);
 });
 
 test('parse fail broken string', t => {

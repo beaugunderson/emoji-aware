@@ -20,7 +20,7 @@ test('onlyEmoji', t => {
   characters.forEach(function (e) {
     var result = utilities.onlyEmoji(`abcd${e}fg`);
 
-    t.same(result, [e]);
+    t.deepEqual(result, [e]);
   });
 });
 
@@ -28,6 +28,6 @@ test('withoutEmoji', t => {
   characters.forEach(function (e) {
     var result = utilities.withoutEmoji(`abcd${e}fg`);
 
-    t.same(result, ['a', 'b', 'c', 'd', 'f', 'g']);
+    t.deepEqual(result, ['a', 'b', 'c', 'd', 'f', 'g']);
   });
 });

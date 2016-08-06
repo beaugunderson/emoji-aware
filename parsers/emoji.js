@@ -28,8 +28,8 @@ var SimpleEmoji = Parsimmon.alt(
   FlagEmoji,
   // Surrogate pairs
   Parsimmon.regex(/\uD83C[\uDC04-\uDFFF]/),
-  Parsimmon.regex(/\uD83D[\uDC00-\uDE4F]/),
-  Parsimmon.regex(/\uD83D[\uDE80-\uDEC5]/),
+  Parsimmon.regex(/\uD83D[\uDC00-\uDFFF]/),
+  Parsimmon.regex(/\uD83E[\uDC00-\uDFFF]/),
   // Single characters (trademark, copyright) that become emoji with a
   // variation selector (TODO: make the variation selector required here?)
   Parsimmon.string('\u00A9'),
