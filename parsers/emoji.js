@@ -20,6 +20,10 @@ var FlagEmoji = Parsimmon.regex(/\uD83C[\uDDE6-\uDDFF]/)
 var ZeroWidthJoiner = Parsimmon.string('\u200D')
   .desc('zero-width joiner (\\u200D)');
 
+var OptionalFitzpatrickModifier =
+  Parsimmon.regex(/(\uD83C[\uDFFB-\uDFFF]){0,1}/)
+  .desc('an optional Fitzpatrick modifier');
+
 var SimpleEmoji = Parsimmon.alt(
   // Simple Unicode emoji
   Parsimmon.regex(/[\u203C-\u3299]/),
@@ -46,13 +50,16 @@ var ZeroWidthJoinerEmoji = Parsimmon.seq(
   ).times(1, 3)
 );
 
-var Emoji = exports.Emoji = Parsimmon.alt(
-  ZeroWidthJoinerEmoji,
-  Parsimmon.seq(
-    SimpleEmoji,
-    OptionalVariationSelector
+var Emoji = exports.Emoji = Parsimmon.seq(
+  Parsimmon.alt(
+    ZeroWidthJoinerEmoji,
+    Parsimmon.seq(
+      SimpleEmoji,
+      OptionalVariationSelector
+    ),
+    KeycapEmoji
   ),
-  KeycapEmoji
+  OptionalFitzpatrickModifier
 ).map(function (result) {
   return flattenDeep(result).join('');
 });
