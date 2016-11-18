@@ -7,6 +7,7 @@ var utilities = require('../emoji-aware.js');
 
 test('onlyEmoji fail broken string', t => {
   var result = utilities.onlyEmoji('\uDC00\uDC01');
+
   t.false(result);
 });
 
