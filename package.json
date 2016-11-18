@@ -4,7 +4,7 @@
   "description": "Emoji-aware unicode string utilities",
   "main": "emoji-aware.js",
   "scripts": {
-    "test": "ava --verbose",
+    "test": "ava",
     "coverage": "nyc npm test && nyc report --reporter=text-lcov | codecov"
   },
   "keywords": [
@@ -16,20 +16,20 @@
   "author": "Beau Gunderson <beau@beaugunderson.com> (https://beaugunderson.com/)",
   "license": "MIT",
   "dependencies": {
-    "lodash.flattendeep": "^4.3.0",
-    "parsimmon": "^0.9.1"
+    "lodash.flattendeep": "^4.4.0",
+    "parsimmon": "^1.0.0"
   },
   "directories": {
     "test": "test"
   },
   "devDependencies": {
-    "ava": "^0.16.0",
-    "benchmark": "^2.1.1",
-    "cheerio": "^0.20.0",
+    "ava": "^0.17.0",
+    "benchmark": "^2.1.2",
+    "cheerio": "^0.22.0",
     "codecov.io": "^0.1.6",
     "emojilib": "^2.0.2",
-    "nyc": "^7.1.0",
-    "request": "^2.74.0"
+    "nyc": "^9.0.1",
+    "request": "^2.78.0"
   },
   "repository": {
     "type": "git",
