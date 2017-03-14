@@ -32,7 +32,13 @@ correctly split that emoji into one entry in the returned array of characters.
 `emoji-aware` also includes a parser combinator-based parser for emoji that you
 can build on top of for your own parsing needs.
 
-### Example
+## API
+
+### `split`
+
+Split a string but keep emoji intact.
+
+#### Example
 
 ```js
 var split = require('emoji-aware').split;
@@ -47,3 +53,29 @@ A starker example that uses Mathias Bynens' `getSymbols` with a
 [composed emoji](http://i.imgur.com/NUKsA1Y.png):
 
 ![a screenshot of the output](http://i.imgur.com/Gdgsik5.png)
+
+### `onlyEmoji`
+
+Returns only the emoji contained in the string.
+
+#### Example
+
+```js
+var onlyEmoji = require('emoji-aware').onlyEmoji;
+
+onlyEmoji('testing😸');
+// ['😸']
+```
+
+### `withoutEmoji`
+
+Returns only the non-emoji contained in the string.
+
+#### Example
+
+```js
+var withoutEmoji = require('emoji-aware').withoutEmoji;
+
+withoutEmoji('testing😸');
+// ['t', 'e', 's', 't', 'i', 'n', 'g']
+```
