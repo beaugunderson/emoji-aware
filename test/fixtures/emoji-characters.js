@@ -1,14 +1,26 @@
 'use strict';
 
-var emojis = require('emojilib');
+var emoji = require('emojilib');
 
-module.exports = Object.keys(emojis.lib)
+module.exports = Object.keys(emoji.lib)
   .filter(function (key) {
-    return emojis.lib[key].char;
+    return emoji.lib[key].char;
   })
-  .map(function (key) {
-    return emojis.lib[key].char;
-  }).concat([
+  .reduce(function (collected, key) {
+    var e = emoji.lib[key];
+    var char = e.char;
+
+    if (e.fitzpatrick_scale) {
+      emoji.fitzpatrick_scale_modifiers.forEach(function (modifier) {
+        collected.push(char + modifier);
+      });
+    }
+
+    collected.push(char);
+
+    return collected;
+  }, [])
+  .concat([
     '👪',
     '💏',
     '💑',

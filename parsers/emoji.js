@@ -5,7 +5,7 @@ var flattenDeep = require('lodash.flattendeep');
 
 var OptionalVariationSelector =
   exports.OptionalVariationSelector = Parsimmon.regex(/[\uFE0E\uFE0F]{0,1}/)
-  .desc('an optional variation selector (\\uFE0E or \\uFE0F)');
+    .desc('an optional variation selector (\\uFE0E or \\uFE0F)');
 
 var KeycapEmoji = Parsimmon.seq(
   Parsimmon.regex(/[0-9#*]/),
@@ -22,7 +22,7 @@ var ZeroWidthJoiner = Parsimmon.string('\u200D')
 
 var OptionalFitzpatrickModifier =
   Parsimmon.regex(/(\uD83C[\uDFFB-\uDFFF]){0,1}/)
-  .desc('an optional Fitzpatrick modifier');
+    .desc('an optional Fitzpatrick modifier');
 
 var SimpleEmoji = Parsimmon.alt(
   // Simple Unicode emoji
@@ -55,6 +55,7 @@ var Emoji = exports.Emoji = Parsimmon.seq(
     ZeroWidthJoinerEmoji,
     Parsimmon.seq(
       SimpleEmoji,
+      OptionalFitzpatrickModifier,
       OptionalVariationSelector
     ),
     KeycapEmoji
