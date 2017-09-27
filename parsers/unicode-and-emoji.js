@@ -9,6 +9,7 @@ var SurrogatePair = Parsimmon.regex(/[\uD800-\uDBFF][\uDC00-\uDFFF]/);
 var Unicode = exports.Unicode = Parsimmon.alt(
   Emoji,
   Parsimmon.regex(/[\u0000-\uD799]/),
+  Parsimmon.regex(/[\uE000-\uFFFF]/),
   SurrogatePair
 );
 
