@@ -14,3 +14,9 @@ test('parse cjk text', function (t) {
   t.is(result1[0], '你');
   t.is(result2[0], '你');
 });
+
+test('punctuation', function (t) {
+  var example = 'たまたま見つけたからといって、フォトジェニック。';
+
+  t.is(example, emoji.withoutEmoji(example).join(''));
+});

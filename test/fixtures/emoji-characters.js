@@ -21,6 +21,7 @@ module.exports = Object.keys(emoji.lib)
     return collected;
   }, [])
   .concat([
+    '🏴󠁧󠁢󠁷󠁬󠁳󠁿',
     '🦓', // Zebra
     '👪',
     '💏',

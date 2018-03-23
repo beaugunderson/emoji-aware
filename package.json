@@ -17,19 +17,19 @@
   "license": "MIT",
   "dependencies": {
     "lodash.flattendeep": "^4.4.0",
-    "parsimmon": "^1.6.2"
+    "parsimmon": "^1.7.1"
   },
   "directories": {
     "test": "test"
   },
   "devDependencies": {
-    "ava": "^0.22.0",
+    "ava": "^0.25.0",
     "benchmark": "^2.1.4",
     "cheerio": "^1.0.0-rc.2",
     "codecov.io": "^0.1.6",
-    "emojilib": "^2.2.9",
-    "nyc": "^11.2.1",
-    "request": "^2.83.0"
+    "emojilib": "^2.2.12",
+    "nyc": "^11.6.0",
+    "request": "^2.85.0"
   },
   "repository": {
     "type": "git",
