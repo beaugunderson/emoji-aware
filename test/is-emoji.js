@@ -7,7 +7,7 @@ var emoji = require('../parsers/emoji.js');
 var isEmoji = require('../lib/is-emoji.js');
 
 characters.forEach(function (e) {
-  test('isEmoji emoji', function (t) {
+  test('isEmoji ' + e, function (t) {
     t.true(isEmoji(e));
   });
 });

@@ -2,7 +2,7 @@
 
 var emoji = require('emojilib');
 
-module.exports = Object.keys(emoji.lib)
+module.exports = new Set(Object.keys(emoji.lib)
   .filter(function (key) {
     return emoji.lib[key].char;
   })
@@ -57,4 +57,4 @@ module.exports = Object.keys(emoji.lib)
     '👨‍❤️‍💋‍👨',
     '👩‍❤️‍💋‍👨',
     '👩‍❤️‍💋‍👩'
-  ]);
+  ]));

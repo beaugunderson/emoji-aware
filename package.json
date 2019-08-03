@@ -4,7 +4,7 @@
   "description": "Emoji-aware unicode string utilities",
   "main": "emoji-aware.js",
   "scripts": {
-    "test": "ava",
+    "test": "ava test/*.js",
     "coverage": "nyc npm test && nyc report --reporter=text-lcov | codecov"
   },
   "keywords": [
@@ -17,19 +17,19 @@
   "license": "MIT",
   "dependencies": {
     "lodash.flattendeep": "^4.4.0",
-    "parsimmon": "^1.7.1"
+    "parsimmon": "^1.13.0"
   },
   "directories": {
     "test": "test"
   },
   "devDependencies": {
-    "ava": "^0.25.0",
+    "ava": "^2.2.0",
     "benchmark": "^2.1.4",
     "cheerio": "^1.0.0-rc.2",
     "codecov.io": "^0.1.6",
-    "emojilib": "^2.2.12",
-    "nyc": "^11.6.0",
-    "request": "^2.85.0"
+    "emojilib": "^2.4.0",
+    "nyc": "^14.1.1",
+    "request": "^2.88.0"
   },
   "repository": {
     "type": "git",
