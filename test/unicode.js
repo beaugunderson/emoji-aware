@@ -1,6 +1,6 @@
 'use strict';
 
-import test from 'ava';
+const test = require('ava');
 
 var characters = require('./fixtures/emoji-characters.js');
 var unicode = require('../parsers/unicode-and-emoji.js');

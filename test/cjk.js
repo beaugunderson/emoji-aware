@@ -1,6 +1,6 @@
 'use strict';
 
-import test from 'ava';
+const test = require('ava');
 
 var emoji = require('../emoji-aware.js');
 
