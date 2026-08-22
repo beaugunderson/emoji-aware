@@ -1,9 +1,8 @@
-[![travis]](http://travis-ci.org/beaugunderson/emoji-aware)
-[![codecov.io](https://codecov.io/github/beaugunderson/emoji-aware/coverage.svg?branch=master)](https://codecov.io/github/beaugunderson/emoji-aware?branch=master)
+[![ci]](https://github.com/beaugunderson/emoji-aware/actions/workflows/ci.yml)
 [![downloads]](https://www.npmjs.com/package/emoji-aware)
 [![version]](https://www.npmjs.com/package/emoji-aware)
 
-[travis]: https://img.shields.io/travis/beaugunderson/emoji-aware.svg
+[ci]: https://github.com/beaugunderson/emoji-aware/actions/workflows/ci.yml/badge.svg
 [downloads]: https://img.shields.io/npm/dm/emoji-aware.svg
 [version]: https://img.shields.io/npm/v/emoji-aware.svg
 

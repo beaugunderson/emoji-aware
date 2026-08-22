@@ -5,7 +5,7 @@
   "main": "emoji-aware.js",
   "scripts": {
     "test": "ava test/*.js",
-    "coverage": "nyc npm test && nyc report --reporter=text-lcov | codecov"
+    "coverage": "nyc npm test && nyc report --reporter=text --reporter=lcov"
   },
   "keywords": [
     "unicode",
@@ -24,12 +24,8 @@
   },
   "devDependencies": {
     "ava": "^4.2.0",
-    "benchmark": "^2.1.4",
-    "cheerio": "^1.0.0-rc.3",
-    "codecov.io": "^0.1.6",
     "emojilib": "^2.4.0",
-    "nyc": "^15.0.0",
-    "request": "^2.88.2"
+    "nyc": "^18.0.0"
   },
   "repository": {
     "type": "git",
